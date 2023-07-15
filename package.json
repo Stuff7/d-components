@@ -1,0 +1,12 @@
+{
+  "name": "d-components",
+  "private": true,
+  "workspaces": ["app", "lib"],
+  "scripts": {
+    "install": "yarn workspaces foreach run install",
+    "dev": "yarn workspace app dev",
+    "build:app": "yarn workspace app build",
+    "preview": "yarn workspace app preview",
+    "build": "yarn workspace lib build & yarn workspace app upgrade-lib"
+  }
+}
