@@ -38,6 +38,9 @@ jobs:
           git commit -m "Update release branch"
 
       - name: Push Release Branch
+        run: git push --force origin release
+
+      - name: Push Release Branch
         uses: ad-m/github-push-action@v0.6.0
         with:
           branch: release
