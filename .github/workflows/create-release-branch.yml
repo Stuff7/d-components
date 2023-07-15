@@ -29,6 +29,8 @@ jobs:
           git checkout -b release
           mkdir dist_temp
           rsync -av lib/dist/ dist_temp/
+          rm -rf node_modules
+          rm -rf app
           git rm -rf .
           rsync -av dist_temp/ .
           rm -rf dist_temp
