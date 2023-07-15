@@ -6,6 +6,6 @@
     "dev": "yarn workspace app dev",
     "build:app": "yarn workspace app build",
     "preview": "yarn workspace app preview",
-    "build": "yarn workspace lib build & yarn workspace app upgrade-lib"
+    "build": "yarn workspace lib build"
   }
 }
