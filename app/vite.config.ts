@@ -37,6 +37,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "~": fileURLToPath(new URL("./src", import.meta.url)),
+      // "d-components": fileURLToPath(new URL("../lib/dist", import.meta.url)),
     },
   },
 });

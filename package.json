@@ -4,8 +4,10 @@
   "workspaces": ["app", "lib"],
   "scripts": {
     "dev": "yarn workspace app dev",
-    "build:app": "yarn workspace app build",
+    "upg:app": "yarn workspace app upgrade-lib",
     "preview": "yarn workspace app preview",
+    "clean:lib": "yarn workspace lib clean",
+    "build:app": "yarn workspace app build",
     "build": "yarn workspace lib build"
   }
 }
