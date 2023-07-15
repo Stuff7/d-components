@@ -8,6 +8,7 @@
     "preview": "yarn workspace app preview",
     "clean:lib": "yarn workspace lib clean",
     "build:app": "yarn workspace app build",
-    "build": "yarn workspace lib build"
+    "build": "yarn workspace lib build",
+    "watch:lib": "yarn workspace lib watch"
   }
 }
