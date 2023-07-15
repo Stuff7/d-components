@@ -1,0 +1,20 @@
+{
+  "name": "d-components",
+  "version": "1.1.0",
+  "description": "Vue Component Library",
+  "type": "module",
+  "main": "index.js",
+  "module": "index.js",
+  "types": "lib/index.d.ts",
+  "files": ["dist"],
+  "exports": {
+    ".": {
+      "types": "./lib/index.d.ts",
+      "import": "./index.js"
+    },
+    "./*": {
+      "types": "./lib/components/*.vue.d.ts",
+      "import": "./*.js"
+    }
+  }
+}

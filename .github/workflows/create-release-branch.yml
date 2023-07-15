@@ -1,0 +1,35 @@
+name: Create Release Branch
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  create_release_branch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build project
+        run: yarn build
+
+      - name: Create Release Branch
+        run: |
+          git checkout -b release
+          git rm -rf .
+          git clean -fxd
+          mv dist/* .
+          git add .
+          git commit -m "Update release branch"
+
+      - name: Push Release Branch
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: release
+          github_token: ${{ secrets.GITHUB_TOKEN }}
