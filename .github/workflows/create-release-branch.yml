@@ -22,9 +22,11 @@ jobs:
       - name: Create Release Branch
         run: |
           git checkout -b release
+          mkdir dist_temp
+          mv lib/dist/* dist_temp/
           git rm -rf .
-          git clean -fxd
-          mv dist/* .
+          mv dist_temp/* .
+          rm -rf dist_temp
           git add .
           git commit -m "Update release branch"
 
