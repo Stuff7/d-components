@@ -22,14 +22,15 @@ jobs:
         run: yarn install
 
       - name: Build app project
-        run: yarn build:app
+        run: |
+          yarn build:app
+          find . -name "node_modules" -type d -prune -exec rm -rf {} +
 
       - name: Create GitHub Pages Branch
         run: |
           git checkout -b gh-pages
           mkdir dist_temp
-          rsync -av docs dist_temp/
-          rm -rf node_modules
+          rsync -av docs/* dist_temp/
           git rm -rf .
           rsync -av dist_temp/ .
           rm -rf dist_temp
