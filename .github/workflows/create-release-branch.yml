@@ -16,7 +16,12 @@ jobs:
           git config --global user.name "Armando"
 
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout
+
+      - name: Set up Node.js
+        uses: actions/setup-node
+        with:
+          node-version: '18.10.0'
 
       - name: Install dependencies
         run: pnpm install
@@ -39,7 +44,7 @@ jobs:
           git commit -m "Update release branch"
 
       - name: Push Release Branch
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action
         with:
           branch: release
           github_token: ${{ secrets.GITHUB_TOKEN }}
