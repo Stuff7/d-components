@@ -10,8 +10,8 @@ export default defineConfig({
     assetsInlineLimit: 0,
     lib: {
       entry: {
-        index: resolve("./lib/index.ts"),
-        ...getFilePaths("./lib/components"),
+        index: resolve("lib/index.ts"),
+        ...getFilePaths("lib/components"),
       },
       formats: ["es"],
       fileName: (_, entryName) => `${entryName}.js`,
