@@ -49,7 +49,12 @@ function injectCss(): PluginOption {
     },
     renderChunk(code, chunk) {
       if (chunk.isEntry) {
-        return `import "./${chunk.name}.css";\n${code}`;
+        const imports = [`import "./${chunk.name}.css";`];
+        if (chunk.name !== "index") {
+          imports.push('import "./index.css";');
+        }
+        imports.push(code);
+        return imports.join("\n");
       }
     },
   };
