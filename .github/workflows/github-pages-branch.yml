@@ -25,7 +25,17 @@ jobs:
           version: 8.6.7
 
       - name: Install dependencies
-        run: pnpm update
+        run: |
+          pnpm update
+          git add pnpm-lock.yaml
+          git commit -m "Update d-components library to latest release."
+
+      - name: Push pnpm-lock.yaml to master
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          branch: master
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
 
       - name: Build app project
         run: |

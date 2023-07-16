@@ -12,7 +12,7 @@ importers:
     dependencies:
       d-components:
         specifier: github:stuff7/d-components#release
-        version: github.com/stuff7/d-components/5ae735fe59efe11879a491984b88592790ff0f06(vue@3.3.4)
+        version: github.com/stuff7/d-components/4d47abfd51af2c7c255d08a680c4792ccd22232e(vue@3.3.4)
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -2429,9 +2429,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/stuff7/d-components/5ae735fe59efe11879a491984b88592790ff0f06(vue@3.3.4):
-    resolution: {tarball: https://codeload.github.com/stuff7/d-components/tar.gz/5ae735fe59efe11879a491984b88592790ff0f06}
-    id: github.com/stuff7/d-components/5ae735fe59efe11879a491984b88592790ff0f06
+  github.com/stuff7/d-components/4d47abfd51af2c7c255d08a680c4792ccd22232e(vue@3.3.4):
+    resolution: {tarball: https://codeload.github.com/stuff7/d-components/tar.gz/4d47abfd51af2c7c255d08a680c4792ccd22232e}
+    id: github.com/stuff7/d-components/4d47abfd51af2c7c255d08a680c4792ccd22232e
     name: d-components
     version: 1.1.1
     peerDependencies:
