@@ -4,6 +4,7 @@ import DIcon from "d-components/DIcon";
 import DInput from "d-components/DInput";
 import DSelect from "d-components/DSelect";
 import DSwitch from "d-components/DSwitch";
+import DTooltip from "d-components/DTooltip";
 import { ref } from "vue";
 import { keysOf } from "~/utils";
 
@@ -41,6 +42,14 @@ const toggle = ref(true);
         value-key="label"
       />
       <d-switch v-model="toggle" />
+      <button>
+        Hover for tooltip
+        <d-tooltip>This is the tooltip</d-tooltip>
+      </button>
+      <button>
+        Hover for another tooltip
+        <d-tooltip><d-icon name="trash" /></d-tooltip>
+      </button>
     </article>
   </main>
 </template>
@@ -64,6 +73,8 @@ const toggle = ref(true);
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+    gap: var(--spacing-nm-100);
   }
 }
 </style>
