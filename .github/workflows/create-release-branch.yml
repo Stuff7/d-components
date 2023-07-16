@@ -22,9 +22,7 @@ jobs:
         run: yarn install
 
       - name: Build project
-        run: |
-          yarn build
-          find . -name "node_modules" -type d -prune -exec rm -rf {} +
+        run: yarn build
 
       - name: Create Release Branch
         run: |
@@ -36,10 +34,8 @@ jobs:
           git commit -m "Update release branch"
 
       - name: Push Release Branch
-        run: git push --force origin release
-
-      - name: Push Release Branch
         uses: ad-m/github-push-action@v0.6.0
         with:
           branch: release
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          force: true
