@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+    "preinstall": "yarn upgrade-lib",
     "dev": "vite",
     "build": "run-p clean type-check build-only",
     "preview": "vite preview",
