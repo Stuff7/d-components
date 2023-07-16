@@ -113,7 +113,8 @@ function validateInput(event: Event) {
     color: var(--dc__color-text);
     background: transparent;
     font-size: var(--dc__p-nm-100);
-    border: none;
+    border: 0;
+    border-radius: 0;
     border-bottom: 2px solid;
     border-bottom-color: var(--dc__color-text);
     transition: border .3s, text-indent .3s;
