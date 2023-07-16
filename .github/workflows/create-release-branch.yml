@@ -29,11 +29,9 @@ jobs:
       - name: Create Release Branch
         run: |
           git checkout -b release
-          mkdir dist_temp
-          rsync -av lib/dist/ dist_temp/
           git rm -rf .
-          rsync -av dist_temp/ .
-          rm -rf dist_temp
+          rsync -av lib/dist/ .
+          rm -rf lib
           git add .
           git commit -m "Update release branch"
 

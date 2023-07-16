@@ -29,11 +29,9 @@ jobs:
       - name: Create GitHub Pages Branch
         run: |
           git checkout -b gh-pages
-          mkdir dist_temp
-          rsync -av docs/* dist_temp/
           git rm -rf .
-          rsync -av dist_temp/ .
-          rm -rf dist_temp
+          rsync -av docs/ .
+          rm -rf docs
           git add .
           git commit -m "Build static site."
 
