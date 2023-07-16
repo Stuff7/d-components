@@ -3,6 +3,7 @@
   "private": true,
   "workspaces": ["app", "lib"],
   "scripts": {
+    "preinstall": "yarn upg:app",
     "dev": "yarn workspace app dev",
     "upg:app": "yarn workspace app upgrade-lib",
     "preview": "yarn workspace app preview",

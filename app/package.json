@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "clean": "rimraf ../docs",
-    "upgrade-lib": "rimraf ./node_modules/.vite & yarn upgrade github:stuff7/d-components#release",
+    "upgrade-lib": "yarn remove d-components & yarn add github:stuff7/d-components#release",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint --config ../.eslintrc.cjs --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
