@@ -673,7 +673,7 @@ csstype@^3.1.1:
 
 "d-components@github:stuff7/d-components#release":
   version "1.1.0"
-  resolved "https://codeload.github.com/stuff7/d-components/tar.gz/b5ed97c1ae9b843371fbb48efeaa2cdec2423897"
+  resolved "https://codeload.github.com/stuff7/d-components/tar.gz/b8b5bf64da3755aa2573f0fec8045388b30543f8"
 
 de-indent@^1.0.2:
   version "1.0.2"
