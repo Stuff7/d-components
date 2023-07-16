@@ -24,7 +24,7 @@ jobs:
           version: 8.6.7
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm update
 
       - name: Build project
         run: |

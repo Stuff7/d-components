@@ -4,7 +4,6 @@
   "workspaces": ["app", "lib"],
   "scripts": {
     "dev": "pnpm --filter app dev",
-    "upg:app": "pnpm --filter app upgrade-lib",
     "preview": "pnpm --filter app preview",
     "clean:lib": "pnpm --filter lib clean",
     "build:app": "pnpm --filter app build",
