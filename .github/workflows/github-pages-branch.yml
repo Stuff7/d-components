@@ -22,7 +22,9 @@ jobs:
         run: yarn install
 
       - name: Build app project
-        run: yarn build:app
+        run: |
+          yarn build:app
+          find . -name "node_modules" -type d -prune -exec rm -rf {} +
 
       - name: Create GitHub Pages Branch
         run: |

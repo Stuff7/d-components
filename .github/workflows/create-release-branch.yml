@@ -22,7 +22,9 @@ jobs:
         run: yarn install
 
       - name: Build project
-        run: yarn build
+        run: |
+          yarn build
+          find . -name "node_modules" -type d -prune -exec rm -rf {} +
 
       - name: Create Release Branch
         run: |
