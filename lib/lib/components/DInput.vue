@@ -52,7 +52,7 @@ function validateInput(event: Event) {
       v-bind="$attrs"
       @input="validateInput"
     />
-    <label :class="$style.label">{{ label }} sddsdsd</label>
+    <label :class="$style.label">{{ label }}</label>
     <p
       v-if="inputError"
       :class="$style.error"
