@@ -16,5 +16,8 @@
       "types": "./lib/components/*.vue.d.ts",
       "import": "./*.js"
     }
+  },
+  "peerDependencies": {
+    "vue": "^3.3.4"
   }
 }

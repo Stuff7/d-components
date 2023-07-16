@@ -8,11 +8,10 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "watch": "vite build --watch",
-    "clean": "rimraf dist",
     "type-check": "vue-tsc -p tsconfig.app.json",
     "lint": "eslint --config ../.eslintrc.cjs --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
-  "peerDependencies": {
+  "dependencies": {
     "vue": "^3.3.4"
   },
   "devDependencies": {
@@ -28,7 +27,6 @@
     "sass": "^1.63.6",
     "typescript": "~5.0.4",
     "vite": "^4.3.9",
-    "vue-tsc": "^1.6.5",
-    "vue": "^3.3.4"
+    "vue-tsc": "^1.6.5"
   }
 }

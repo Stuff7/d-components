@@ -3,13 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "preinstall": "yarn upgrade-lib",
     "dev": "vite",
-    "build": "run-p clean type-check build-only",
+    "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
-    "clean": "rimraf ../docs",
-    "upgrade-lib": "yarn remove d-components & yarn add github:stuff7/d-components#release",
+    "upgrade-lib": "pnpm remove d-components & pnpm add github:stuff7/d-components#release",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint --config ../.eslintrc.cjs --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },

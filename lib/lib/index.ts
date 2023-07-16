@@ -1,3 +1,4 @@
+import { } from "@vue/shared";
 import "~/style/main.scss";
 export { default as DIcon } from "~/components/DIcon.vue";
 export { default as DInput } from "~/components/DInput.vue";
