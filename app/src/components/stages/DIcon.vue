@@ -9,12 +9,12 @@ const iconOptions = iconKeys.map((key) => ({
 
 <script setup lang="ts">
 import { ref } from "vue";
-import DIcon, { type IconName } from "d-components/DIcon";
+import DIcon from "d-components/DIcon";
 import DSelect from "d-components/DSelect";
 import DInput from "d-components/DInput";
 import DStage from "~/components/DStage.vue";
 
-const name = ref<IconName>(iconOptions[0]);
+const name = ref(iconOptions[0]);
 const color = ref("#ffffff");
 const fontSize = ref("25vw");
 </script>
