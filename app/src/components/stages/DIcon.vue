@@ -14,7 +14,7 @@ import DSelect from "d-components/DSelect";
 import DInput from "d-components/DInput";
 import DStage from "~/components/DStage.vue";
 
-const name = ref(iconOptions[0]);
+const selectedIcon = ref(iconOptions[0]);
 const color = ref("#ffffff");
 const fontSize = ref("25vw");
 </script>
@@ -22,13 +22,13 @@ const fontSize = ref("25vw");
 <template>
   <d-stage>
     <d-icon
-      :name="name.value"
+      :name="selectedIcon.value"
       :style="{ color, fontSize }"
     />
     <template #default-controls>
       <p>Name</p>
       <d-select
-        v-model="name"
+        v-model="selectedIcon"
         :options="iconOptions"
       />
       <p>Color</p>
