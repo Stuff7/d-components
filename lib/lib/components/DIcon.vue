@@ -1,20 +1,26 @@
-<script setup lang="ts">
-defineProps<{ name: keyof typeof ICON_MAP }>();
+<script lang="ts">
+import { keysOf } from "~/utils";
 
-const ICON_MAP = {
+const iconMap = {
   "exclamation-triangle": '"\u{f071}"',
   "plus": '"\u{2b}"',
   "trash": '"\u{f2ed}"',
   "chevron-down": '"\u{f078}"',
 };
 
-export type IconName = keyof typeof ICON_MAP;
+export const iconKeys = keysOf(iconMap);
+
+export type IconName = typeof iconKeys[number];
+</script>
+
+<script setup lang="ts">
+defineProps<{ name: keyof typeof iconMap }>();
 </script>
 
 <template>
   <i
     :class="$style.DIcon"
-    :style="{ '--icon-unicode': ICON_MAP[name] }"
+    :style="{ '--icon-unicode': iconMap[name] }"
   />
 </template>
 

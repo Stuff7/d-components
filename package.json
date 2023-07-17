@@ -1,7 +1,10 @@
 {
   "name": "d-components",
   "private": true,
-  "workspaces": ["app", "lib"],
+  "workspaces": [
+    "app",
+    "lib"
+  ],
   "scripts": {
     "dev": "pnpm --filter app dev",
     "preview": "pnpm --filter app preview",
@@ -9,5 +12,13 @@
     "build:app": "pnpm --filter app build",
     "build": "pnpm --filter lib build",
     "watch:lib": "pnpm --filter lib watch"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "eslint": "^8.39.0",
+    "eslint-plugin-vue": "^9.11.0",
+    "vue-eslint-parser": "^9.3.1"
   }
 }

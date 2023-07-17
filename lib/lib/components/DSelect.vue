@@ -6,11 +6,14 @@ import { isIndexable } from "~/utils";
 const emit = defineEmits<{ (e: "update:modelValue", modelValue: SelectOption): void }>();
 const props = withDefaults(defineProps<{
   options: readonly SelectOption[],
-  modelValue: SelectOption,
+  modelValue?: SelectOption,
+  placeholder?: string,
   labelKey?: keyof SelectOption,
   valueKey?: keyof SelectOption,
   styleKey?: keyof SelectOption,
 }>(), {
+  modelValue: undefined,
+  placeholder: "",
   labelKey: "label",
   valueKey: "value",
   styleKey: "style",
@@ -25,8 +28,8 @@ function selectChange({ target }: Event) {
   }
 }
 
-function indexableOrUndefined(this: keyof SelectOption, option: SelectOption) {
-  const value = option[this];
+function indexableOrUndefined(this: keyof SelectOption, option?: SelectOption) {
+  const value = option?.[this];
   if (isIndexable(value)) {
     return value;
   }
@@ -34,8 +37,8 @@ function indexableOrUndefined(this: keyof SelectOption, option: SelectOption) {
 
 const getValue = indexableOrUndefined.bind(props.valueKey) as typeof indexableOrUndefined;
 const getLabel = indexableOrUndefined.bind(props.labelKey) as typeof indexableOrUndefined;
-const getStyle = (option: SelectOption): StyleValue | undefined => {
-  const style = option[props.styleKey];
+const getStyle = (option?: SelectOption): StyleValue | undefined => {
+  const style = option?.[props.styleKey];
   if ((typeof style === "object" && style) || typeof style === "string") {
     return style as StyleValue;
   }
@@ -62,7 +65,7 @@ const getStyle = (option: SelectOption): StyleValue | undefined => {
     </select>
     <button :class="$style.toggle">
       <slot :selected="modelValue">
-        {{ getLabel(modelValue) }}
+        {{ modelValue ? getLabel(modelValue) : placeholder }}
       </slot>
       <d-icon
         name="chevron-down"
@@ -75,7 +78,7 @@ const getStyle = (option: SelectOption): StyleValue | undefined => {
 <style module lang="scss">
 .DSelect {
   position: relative;
-  width: var(--select-width, max-content);
+  width: var(--select-width, auto);
 
   .toggle {
     cursor: pointer;
@@ -92,7 +95,7 @@ const getStyle = (option: SelectOption): StyleValue | undefined => {
     gap: var(--dc__spacing-nm-100);
     font-size: var(--dc__p-nm-100);
     pointer-events: none;
-    width: var(--select-width, max-content);
+    width: 100%;
   }
 
   .nativeSelect {
