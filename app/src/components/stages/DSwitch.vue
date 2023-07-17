@@ -10,7 +10,7 @@ import DInput from "d-components/DInput";
 import DStage from "~/components/DStage.vue";
 
 const enabled = ref(false);
-const disabledColor = ref("#ffffff");
+const disabledColor = ref("#888888");
 const showStatusLabel = ref(false);
 const enabledStatusLabel = ref("Enabled");
 const disabledStatusLabel = ref("Disabled");

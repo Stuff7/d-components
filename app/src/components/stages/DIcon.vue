@@ -15,7 +15,7 @@ import DInput from "d-components/DInput";
 import DStage from "~/components/DStage.vue";
 
 const selectedIcon = ref(iconOptions[0]);
-const color = ref("#ffffff");
+const color = ref("#888888");
 const fontSize = ref("25vw");
 </script>
 
@@ -30,7 +30,10 @@ const fontSize = ref("25vw");
       <d-select
         v-model="selectedIcon"
         :options="iconOptions"
-      />
+      >
+        <d-icon :name="selectedIcon.label" />
+        <p>{{ selectedIcon.label }}</p>
+      </d-select>
       <p>Color</p>
       <input
         v-model="color"

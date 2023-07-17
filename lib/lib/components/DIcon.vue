@@ -1,11 +1,13 @@
 <script lang="ts">
 import { keysOf } from "~/utils";
 
-const iconMap = {
+export const iconMap = {
   "exclamation-triangle": '"\u{f071}"',
   "plus": '"\u{2b}"',
   "trash": '"\u{f2ed}"',
   "chevron-down": '"\u{f078}"',
+  "check": '"\u{f00c}"',
+  "angle-double-right": '"\u{f101}"',
 };
 
 export const iconKeys = keysOf(iconMap);
