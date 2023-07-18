@@ -8,12 +8,14 @@ const props = withDefaults(defineProps<{
   options: readonly SelectOption[],
   modelValue?: SelectOption,
   placeholder?: string,
+  disabled?: boolean,
   labelKey?: keyof SelectOption,
   valueKey?: keyof SelectOption,
   styleKey?: keyof SelectOption,
 }>(), {
   modelValue: undefined,
   placeholder: "",
+  disabled: false,
   labelKey: "label",
   valueKey: "value",
   styleKey: "style",
@@ -51,7 +53,7 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
       v-if="options.length"
       :class="$style.nativeSelect"
       :value="getValue(modelValue)"
-      v-bind="$attrs"
+      :disabled="disabled"
       @change="selectChange"
     >
       <option
