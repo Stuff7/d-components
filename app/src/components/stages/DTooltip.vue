@@ -20,9 +20,10 @@ const tooltipText = ref("This is the tooltip.");
       <h1>
         Hover over this to see the tooltip.
         <d-tooltip>
-          <d-icon name="trash" />
-          <br>
-          <i>{{ tooltipText }}</i>
+          <span style="display: flex; gap: var(--spacing-nm-100);">
+            <d-icon name="trash" />
+            <i>{{ tooltipText }}</i>
+          </span>
         </d-tooltip>
       </h1>
     </template>

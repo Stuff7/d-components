@@ -51,6 +51,7 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
       v-if="options.length"
       :class="$style.nativeSelect"
       :value="getValue(modelValue)"
+      v-bind="$attrs"
       @change="selectChange"
     >
       <option
@@ -63,7 +64,10 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
         {{ getLabel(option) }}
       </option>
     </select>
-    <button :class="$style.toggle">
+    <button
+      :class="$style.toggle"
+      tabindex="-1"
+    >
       <slot :selected="modelValue">
         {{ modelValue ? getLabel(modelValue) : placeholder }}
       </slot>
@@ -83,7 +87,6 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
   .toggle {
     cursor: pointer;
     outline: 0;
-    border: 0;
     background: var(--select-button-background, var(--dc__color-text));
     border: var(--select-border, 0);
     border-radius: var(--select-border-radius, var(--dc__radius-nm-100));
@@ -111,6 +114,20 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
     z-index: 1;
     pointer-events: all;
     cursor: pointer;
+
+    &:disabled {
+      cursor: not-allowed;
+
+      + .toggle {
+        opacity: 0.5;
+      }
+    }
+
+    &:focus + .toggle {
+      background: var(--dc__color-accent);
+      color: var(--dc__color-background);
+      outline: 4px solid var(--dc__color-text);
+    }
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import DIcon from "~/components/DIcon.vue";
 
 const NUMBER_PATTERN = /^-?(\d+\.?\d*|\d*\.?\d+)$/;
@@ -14,7 +14,14 @@ const props = withDefaults(
   { label: "", type: "text" },
 );
 
-const inputText = ref(props.modelValue);
+const inputText = computed({
+  get() {
+    return props.modelValue;
+  },
+  set(newValue) {
+    emit("update:modelValue", newValue.toString());
+  },
+});
 const inputError = ref<Option<string>>(null);
 const buzz = ref(false);
 
@@ -81,6 +88,7 @@ function validateInput(event: Event) {
   }
 
   .label {
+    opacity: 0.5;
     pointer-events: none;
     position: absolute;
     font-size: var(--dc__p-nm-100);
@@ -119,10 +127,18 @@ function validateInput(event: Event) {
     border-bottom-color: var(--dc__color-text);
     transition: border .3s, text-indent .3s;
 
+    &:disabled {
+      cursor: not-allowed;
+
+      &, & ~ .error {
+        opacity: 0.5;
+      }
+    }
+
     &:focus, &:active, &:not(:placeholder-shown) {
       border-bottom-color: var(--dc__color-accent);
 
-      & + .label {
+      + .label {
         bottom: var(--dc__radius-nm-100);
         translate: 0;
         padding: 0;

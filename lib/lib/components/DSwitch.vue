@@ -24,11 +24,14 @@ defineProps<{ modelValue: boolean }>();
   position: relative;
   flex-direction: var(--switch-flex-direction, row);
   gap: var(--dc__spacing-nm-100);
+  user-select: none;
 
   .toggle {
     --width: var(--switch-width, 3rem);
-    width: var(--width);
-    height: calc(var(--width) * 0.5);
+    --padding: calc(var(--width) * 0.025);
+    outline: var(--padding) solid var(--dc__color-background);
+    padding: var(--padding);
+    width: calc(var(--width) + var(--padding) * 2);
     background: var(--switch-disabled-background, var(--dc__color-text));
     display: block;
     border-radius: calc(var(--width) * 0.5);
@@ -37,21 +40,16 @@ defineProps<{ modelValue: boolean }>();
 
     &::after {
       content: "";
-      position: absolute;
-      top: calc(var(--width) * 0.025);
-      left: calc(var(--width) * 0.025);
-      width: calc(var(--width) * 0.45);
-      height: calc(var(--width) * 0.45);
+      display: block;
+      width: calc(var(--width) * 0.5);
+      height: calc(var(--width) * 0.5);
       background: var(--dc__color-background);
       border-radius: calc(var(--width) * 0.45);
-      transition: 0.3s;
+      transform: translateX(0);
+      transition: width 0.3s, transform 0.3s;
     }
   }
 
-
-  &:active .toggle::after {
-    width: calc(var(--width) * 0.65);
-  }
 
   .nativeInput {
     cursor: pointer;
@@ -63,15 +61,47 @@ defineProps<{ modelValue: boolean }>();
     width: 100%;
     height: 100%;
     position: absolute;
+    user-select: none;
+
+    &:disabled {
+      cursor: not-allowed;
+
+      + .toggle {
+        opacity: 0.5;
+      }
+    }
+
+    &:focus + .toggle {
+      background: var(--dc__color-background);
+      outline-color: var(--dc__color-text);
+      &::after {
+        background: var(--dc__color-accent);
+      }
+    }
 
     &:checked + .toggle {
       background: var(--dc__color-accent);
 
       &::after {
-        left: calc(100% - calc(var(--width) * 0.025));
-        transform: translateX(-100%);
+        background: var(--dc__color-background);
+        transform: translateX(calc(var(--width) * 0.5));
       }
     }
   }
+
+  &:active .nativeInput {
+    &:not(:disabled) + .toggle::after {
+      width: calc(var(--width) * 0.65);
+    }
+
+    &:disabled + .toggle::after {
+      transform: translateX(calc(var(--width) * 0.15));
+    }
+
+    &:checked + .toggle::after {
+      transform: translateX(calc(var(--width) * 0.35));
+    }
+  }
+
 }
 </style>

@@ -15,13 +15,15 @@ const width = ref("auto");
 
 <template>
   <d-stage>
-    <d-select
-      v-model="selectedOption"
-      :options="options"
-      :style="{
-        '--select-width': width,
-      }"
-    />
+    <template #regular>
+      <d-select
+        v-model="selectedOption"
+        :options="options"
+        :style="{
+          '--select-width': width,
+        }"
+      />
+    </template>
     <template #default-controls>
       <p>Option Count</p>
       <d-input
@@ -33,6 +35,16 @@ const width = ref("auto");
       <d-input
         v-model="width"
         label="Any css width unit"
+      />
+    </template>
+    <template #disabled>
+      <d-select
+        v-model="selectedOption"
+        :options="options"
+        :style="{
+          '--select-width': width,
+        }"
+        disabled
       />
     </template>
   </d-stage>

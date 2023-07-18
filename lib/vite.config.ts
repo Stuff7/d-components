@@ -1,13 +1,20 @@
 import { fileURLToPath, URL } from "node:url";
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
+import autoprefixer from "autoprefixer";
 
 import { defineConfig, PluginOption } from "vite";
 import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
+  css: {
+    postcss: {
+      plugins: [autoprefixer],
+    },
+  },
   build: {
     assetsInlineLimit: 0,
+    minify: true,
     lib: {
       entry: {
         index: resolve("lib/index.ts"),

@@ -51,6 +51,7 @@ const tooltipRef = useIntersectionObserver((entry) => {
     <div
       ref="tooltipRef"
       role="tooltip"
+      :class="$style.Tooltip"
       :style="{
         '--tooltip-x': `${x}px`,
         '--tooltip-y': `${y}px`,
@@ -64,14 +65,15 @@ const tooltipRef = useIntersectionObserver((entry) => {
   <span
     v-if="!parentRef"
     ref="anchorRef"
+    :class="$style.TooltipAnchor"
   />
 </template>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @use "~/style/font";
 @use "~/style/color";
 
-div {
+.Tooltip {
   position: absolute;
   left: var(--tooltip-x);
   top: var(--tooltip-y);
@@ -79,6 +81,7 @@ div {
   background: var(--dc__color-background);
   color: var(--dc__color-text);
   box-shadow: 0 0 font.rem(10) 0 var(--dc__color-background);
+  border: 1px solid var(--dc__color-text);
   border-radius: var(--dc__radius-nm-100);
   padding: var(--dc__spacing-nm-100);
   width: max-content;
@@ -86,7 +89,7 @@ div {
   transform: translate(var(--tooltip-position-x), var(--tooltip-position-y));
 }
 
-span {
+.TooltipAnchor {
   display: none;
 }
 </style>
