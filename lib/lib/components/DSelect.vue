@@ -1,5 +1,5 @@
 <script setup generic="SelectOption extends Record<Indexable, unknown>" lang="ts">
-import type { StyleValue } from "vue";
+import { ref, type StyleValue } from "vue";
 import DIcon from "~/components/DIcon.vue";
 import { isIndexable } from "~/utils";
 
@@ -20,6 +20,7 @@ const props = withDefaults(defineProps<{
   valueKey: "value",
   styleKey: "style",
 });
+const focused = ref(false);
 
 function selectChange({ target }: Event) {
   if (target instanceof HTMLSelectElement) {
@@ -55,6 +56,8 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
       :value="getValue(modelValue)"
       :disabled="disabled"
       @change="selectChange"
+      @focus="focused = true"
+      @blur="focused = false"
     >
       <option
         v-for="option of options"
@@ -70,7 +73,10 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
       :class="$style.toggle"
       tabindex="-1"
     >
-      <slot :selected="modelValue">
+      <slot
+        :selected="modelValue"
+        :focused="focused"
+      >
         {{ modelValue ? getLabel(modelValue) : placeholder }}
       </slot>
       <d-icon
@@ -128,7 +134,7 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
     &:focus + .toggle {
       background: var(--dc__color-accent);
       color: var(--dc__color-background);
-      outline: 4px solid var(--dc__color-text);
+      outline: 2px solid var(--dc__color-text);
     }
   }
 }

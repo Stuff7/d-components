@@ -139,6 +139,7 @@ function validateInput(event: Event) {
       border-bottom-color: var(--dc__color-accent);
 
       + .label {
+        opacity: 1;
         bottom: var(--dc__radius-nm-100);
         translate: 0;
         padding: 0;

@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import DInput from "d-components/DInput";
-import DSelect from "d-components/DSelect";
+import DInput from "d-components/DInput.vue";
+import DSelect from "d-components/DSelect.vue";
+import DSwitch from "d-components/DSwitch.vue";
+import DIcon from "d-components/DIcon.vue";
 import DStage from "~/components/DStage.vue";
 
 const optionCount = ref(10);
@@ -11,6 +13,7 @@ const options = computed(() => Array.from({ length: optionCount.value }).map((_,
 })));
 const selectedOption = ref(options.value[0]);
 const width = ref("auto");
+const disabled = ref(false);
 </script>
 
 <template>
@@ -22,9 +25,32 @@ const width = ref("auto");
         :style="{
           '--select-width': width,
         }"
+        :disabled="disabled"
       />
     </template>
+    <template #custom>
+      <d-select
+        v-slot="{ focused }"
+        v-model="selectedOption"
+        :options="options"
+        :style="{
+          '--select-width': width,
+        }"
+        :disabled="disabled"
+      >
+        <div :class="{ [$style.CustomSelect]: true, [$style.focused]: focused }">
+          <d-icon
+            :class="$style.icon"
+            name="trash"
+          />
+          <p>You can have <b>any</b> components here</p>
+          <b>{{ selectedOption.label }}</b>
+        </div>
+      </d-select>
+    </template>
     <template #default-controls>
+      <p>Disabled</p>
+      <d-switch v-model="disabled" />
       <p>Option Count</p>
       <d-input
         v-model="optionCount"
@@ -37,15 +63,25 @@ const width = ref("auto");
         label="Any css width unit"
       />
     </template>
-    <template #disabled>
-      <d-select
-        v-model="selectedOption"
-        :options="options"
-        :style="{
-          '--select-width': width,
-        }"
-        disabled
-      />
-    </template>
   </d-stage>
 </template>
+
+<style lang="scss" module>
+.CustomSelect {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: var(--spacing-nm-100);
+  border-block: 1px solid var(--color-background-1);
+
+  &.focused b {
+    color: var(--color-background-1);
+  }
+
+  .icon {
+    grid-row: span 2;
+    align-self: center;
+    font-size: var(--p-nm-200);
+  }
+}
+</style>

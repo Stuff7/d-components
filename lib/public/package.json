@@ -12,7 +12,7 @@
       "types": "./lib/index.d.ts",
       "import": "./index.js"
     },
-    "./*": {
+    "./*.vue": {
       "types": "./lib/components/*.vue.d.ts",
       "import": "./*.js"
     }

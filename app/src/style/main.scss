@@ -28,6 +28,21 @@
     --color-accent: #{color.$light-accent};
     --color-error: #{color.$light-error};
   }
+  --dc__spacing-nm-100: 10px;
+  --dc__p-nm-100: 32px;
+  --dc__radius-nm-100: 16px;
+
+  --dc__color-background: yellow;
+  --dc__color-text: purple;
+  --dc__color-accent: darkcyan;
+  --dc__color-error: crimson;
+
+  @media (prefers-color-scheme: dark) {
+    --dc__color-background: purple;
+    --dc__color-text: yellow;
+    --dc__color-accent: cyan;
+    --dc__color-error: hotpink;
+  }
 }
 
 *, *::before, *::after {
@@ -57,7 +72,6 @@ strong, b {
 
 input, button, textarea, option {
   font-family: var(--font-body);
-  outline: 0;
   border: 0;
 }
 

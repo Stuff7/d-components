@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, onMounted, onUpdated, ref, useSlots } from "vue";
 import { keysOf } from "~/utils";
-import DSelect from "d-components/DSelect";
+import DSelect from "d-components/DSelect.vue";
 
 const slots = useSlots();
 const variants = ref(getSlots());
