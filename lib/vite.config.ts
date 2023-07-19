@@ -21,7 +21,7 @@ export default defineConfig({
         ...getFilePaths("lib/components"),
       },
       formats: ["es"],
-      fileName: (_, entryName) => `${entryName}.vue.js`,
+      fileName: (_, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
       external: /^vue/,
