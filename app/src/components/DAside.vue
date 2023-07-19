@@ -6,8 +6,10 @@ defineEmits<{ (e: "update:modelValue", v: T): void }>();
 </script>
 
 <template>
-  <aside :class="$style.DSidebar">
-    DComponents
+  <aside :class="$style.DAside">
+    <h1 :class="$style.title">
+      <b>DComponents</b>
+    </h1>
     <button
       v-for="stageKey of stageKeys"
       :key="stageKey"
@@ -25,35 +27,43 @@ defineEmits<{ (e: "update:modelValue", v: T): void }>();
 </template>
 
 <style lang="scss" module>
-.DSidebar {
+.DAside {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-nm-100);
-  padding: var(--spacing-nm-100);
-  border: 1px solid var(--color-text-1);
+  background: var(--color-background-2);
+  padding-left: var(--spacing-nm-200);
   min-width: clamp(8rem, 20vw, 10rem);
-  font-weight: 900;
   color: var(--color-accent);
+  border-right: 1px solid var(--color-background-3);
+
+  .title {
+    padding-block: var(--spacing-nm-100);
+    padding-right: var(--spacing-nm-100);
+    font-size: calc(var(--p-nm-100) * 1.4);
+  }
 
   .Stage {
     font-size: var(--p-nm-100);
-    border-radius: var(--radius-nm-100);
+    border-radius: var(--radius-nm-100) 0 0 var(--radius-nm-100);
     padding: var(--spacing-nm-100);
     text-align: left;
     font-weight: 600;
-    background: var(--color-text-1);
-    color: var(--color-background-1);
+    background: transparent;
+    color: var(--color-text-1);
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: var(--spacing-nm-100);
 
     &:hover {
-      opacity: 0.85;
+      background: var(--color-text-2);
+      color: var(--color-background-2);
     }
 
     &.selected {
       pointer-events: none;
       background: var(--color-accent);
+      color: var(--color-background-2);
     }
   }
 }

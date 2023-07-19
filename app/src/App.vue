@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import DSidebar from "~/components/DSidebar.vue";
+import DAside from "~/components/DAside.vue";
 import * as stages from "~/components/stages";
 import { keysOf } from "./utils";
 import { ref } from "vue";
@@ -10,7 +10,7 @@ const selectedStage = ref(stageKeys[0]);
 
 <template>
   <main :class="$style.App">
-    <d-sidebar
+    <d-aside
       v-model="selectedStage"
       :stage-keys="stageKeys"
     />
@@ -22,8 +22,6 @@ const selectedStage = ref(stageKeys[0]);
 .App {
   display: grid;
   grid-template-columns: max-content 1fr;
-  gap: var(--spacing-nm-100);
-  padding: var(--spacing-nm-100);
   height: 100vh;
 }
 </style>

@@ -64,9 +64,8 @@ function getSlots() {
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr max-content;
   height: 100%;
-  background: var(--color-text-1);
+  background: var(--color-background-3);
   gap: 1px;
-  padding: 1px;
 
   > section {
     padding: var(--spacing-nm-100);
@@ -95,7 +94,7 @@ function getSlots() {
 
     > .Name, > .Control {
       font-weight: bold;
-      border-bottom: 1px solid var(--color-text-1);
+      border-bottom: 1px solid var(--color-background-3);
       padding-block: var(--spacing-nm-100);
     }
 
