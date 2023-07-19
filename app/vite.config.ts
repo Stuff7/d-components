@@ -43,7 +43,7 @@ export default defineConfig(({ mode }) => {
   } satisfies UserConfigExport;
 
   if (mode === "development") {
-    config.resolve.alias["d-components"] = fileURLToPath(new URL("../lib/dist", import.meta.url));
+    config.resolve.alias["d-components/*.vue"] = fileURLToPath(new URL("../lib/dist", import.meta.url));
   }
 
   return config;
