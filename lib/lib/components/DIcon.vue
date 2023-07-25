@@ -12,6 +12,7 @@ export const iconMap = {
   "times": '"\u{f00d}"',
   "times-circle": '"\u{f057}"',
   "spinner": '"\u{f110}"',
+  "refresh": '"\u{f021}"',
 };
 
 export const iconKeys = keysOf(iconMap);
