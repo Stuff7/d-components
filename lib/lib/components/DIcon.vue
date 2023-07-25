@@ -11,6 +11,7 @@ export const iconMap = {
   "check-circle": '"\u{f058}"',
   "times": '"\u{f00d}"',
   "times-circle": '"\u{f057}"',
+  "spinner": '"\u{f110}"',
 };
 
 export const iconKeys = keysOf(iconMap);
