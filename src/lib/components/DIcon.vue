@@ -27,7 +27,9 @@ defineProps<{ name: keyof typeof iconMap }>();
 </template>
 
 <style module lang="scss">
-@use "miscfe/font.scss";
+@use "miscfe/font.scss" with (
+  $fonts-folder: "./fonts",
+);
 
 @include font.load-single-style-font("FontAwesome", $font-family: "Font Awesome");
 

@@ -1,6 +1,4 @@
-@use "miscfe/font.scss" with (
-  $fonts-folder: "@lib/public/fonts",
-);
+@use "miscfe/font.scss";
 @use "@lib/style/color.scss";
 
 :root {
