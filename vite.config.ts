@@ -56,21 +56,10 @@ function injectCss(): PluginOption {
   return {
     name: "vite-css-inject",
     apply: "build",
-    config() {
-      return {
-        build: {
-          cssCodeSplit: true,
-        },
-      };
-    },
     renderChunk(code, chunk) {
       if (chunk.isEntry) {
-        const imports = [`import "./${chunk.name}.css";`];
-        if (chunk.name !== "index") {
-          imports.push('import "./index.css";');
-        }
-        imports.push(code);
-        return imports.join("\n");
+        const path = chunk.name.includes("/") || chunk.name.includes("\\") ? ".." : ".";
+        return `import "${path}/style.css";\n${code}`;
       }
     },
   };
