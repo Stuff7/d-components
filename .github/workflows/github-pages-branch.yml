@@ -36,8 +36,8 @@ jobs:
         run: |
           git checkout -b gh-pages
           git rm -rf .
-          rsync -av docs/ .
-          rm -rf docs
+          rsync -av dist/app/ .
+          rm -rf dist
           git add .
           git commit -m "Build static site."
 

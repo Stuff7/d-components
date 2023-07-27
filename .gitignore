@@ -1,4 +1,10 @@
+logs
+*.log
+pnpm-debug.log*
+
 node_modules
-.vscode
 dist
-docs
+*.local
+
+.vscode/*
+!.vscode/extensions.json

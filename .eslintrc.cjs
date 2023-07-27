@@ -1,12 +1,10 @@
-/* eslint-env node */
-require("@rushstack/eslint-patch/modern-module-resolution");
-
 module.exports = {
   "root": true,
   "extends": [
     "plugin:vue/vue3-recommended",
     "eslint:recommended",
     "@vue/eslint-config-typescript",
+    "plugin:@typescript-eslint/recommended",
   ],
   "parser": "vue-eslint-parser",
   "parserOptions": {
@@ -14,12 +12,13 @@ module.exports = {
     "sourceType": "module",
     "ecmaVersion": "latest",
   },
-  "ignorePatterns": ["**/build/*", "**/node_modules/*"],
+  "ignorePatterns": ["**/build/*", "**/node_modules/*", "**/dist/*"],
   "env": {
     "es6": true,
     "browser": true,
   },
   "rules": {
+    "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
     "@typescript-eslint/no-unused-vars": ["warn"],
     "a11y-media-has-caption": "off",
     "max-len": [
@@ -31,7 +30,7 @@ module.exports = {
     "no-console": [
       "warn",
       {
-        "allow": ["warn", "error"],
+        "allow": ["warn", "error", "assert"],
       },
     ],
     "no-fallthrough": ["error", { "commentPattern": "break[\\s\\w]*omitted" }],
