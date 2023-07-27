@@ -6,8 +6,13 @@ export const iconMap = {
   "plus": '"\u{2b}"',
   "trash": '"\u{f2ed}"',
   "chevron-down": '"\u{f078}"',
-  "check": '"\u{f00c}"',
   "angle-double-right": '"\u{f101}"',
+  "check": '"\u{f00c}"',
+  "check-circle": '"\u{f058}"',
+  "times": '"\u{f00d}"',
+  "times-circle": '"\u{f057}"',
+  "spinner": '"\u{f110}"',
+  "refresh": '"\u{f021}"',
 };
 
 export const iconKeys = keysOf(iconMap);

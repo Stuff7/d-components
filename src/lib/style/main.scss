@@ -24,3 +24,13 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+
+#tooltip-layer {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}
