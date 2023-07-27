@@ -21,7 +21,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@app": resolve("./src/app"),
-      "@lib": resolve("./dist/lib"),
     },
   },
 });

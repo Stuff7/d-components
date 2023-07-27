@@ -1,6 +1,7 @@
 import { readdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 
+import type { PluginOption } from "vite";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 
@@ -29,6 +30,7 @@ export default defineConfig({
   },
   plugins: [
     vue(),
+    injectCss(),
   ],
   resolve: {
     alias: {
@@ -48,4 +50,28 @@ function getFilePaths(folderPath: string) {
     }
     return entries;
   }, {} as Record<string, string>);
+}
+
+function injectCss(): PluginOption {
+  return {
+    name: "vite-css-inject",
+    apply: "build",
+    config() {
+      return {
+        build: {
+          cssCodeSplit: true,
+        },
+      };
+    },
+    renderChunk(code, chunk) {
+      if (chunk.isEntry) {
+        const imports = [`import "./${chunk.name}.css";`];
+        if (chunk.name !== "index") {
+          imports.push('import "./index.css";');
+        }
+        imports.push(code);
+        return imports.join("\n");
+      }
+    },
+  };
 }

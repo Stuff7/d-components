@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import DInput from "@lib/components/DInput.vue";
-import DSelect from "@lib/components/DSelect.vue";
-import DSwitch from "@lib/components/DSwitch.vue";
-import DIcon from "@lib/components/DIcon.vue";
+import DInput from "d-components/DInput.vue";
+import DSelect from "d-components/DSelect.vue";
+import DSwitch from "d-components/DSwitch.vue";
+import DIcon from "d-components/DIcon.vue";
 import DStage from "@app/components/DStage.vue";
 
 const optionCount = ref(10);

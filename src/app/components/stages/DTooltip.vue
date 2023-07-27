@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import DIcon from "@lib/components/DIcon.vue";
-import DTooltip from "@lib/components/DTooltip.vue";
-import DInput from "@lib/components/DInput.vue";
+import DIcon from "d-components/DIcon.vue";
+import DTooltip from "d-components/DTooltip.vue";
+import DInput from "d-components/DInput.vue";
 import DStage from "@app/components/DStage.vue";
 
 const tooltipText = ref("This is the tooltip.");

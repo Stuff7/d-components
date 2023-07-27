@@ -1,5 +1,5 @@
 <script setup lang="ts" generic="T extends string">
-import DIcon from "@lib/components/DIcon.vue";
+import DIcon from "d-components/DIcon.vue";
 
 defineProps<{ stageKeys: T[], modelValue: T }>();
 defineEmits<{ (e: "update:modelValue", v: T): void }>();

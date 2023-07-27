@@ -1,5 +1,5 @@
 <script lang="ts">
-import { iconKeys } from "@lib/components/DIcon.vue";
+import { iconKeys } from "d-components/DIcon.vue";
 
 const iconOptions = iconKeys.map((key) => ({
   label: key,
@@ -9,9 +9,9 @@ const iconOptions = iconKeys.map((key) => ({
 
 <script setup lang="ts">
 import { ref } from "vue";
-import DIcon from "@lib/components/DIcon.vue";
-import DSelect from "@lib/components/DSelect.vue";
-import DInput from "@lib/components/DInput.vue";
+import DIcon from "d-components/DIcon.vue";
+import DSelect from "d-components/DSelect.vue";
+import DInput from "d-components/DInput.vue";
 import DStage from "@app/components/DStage.vue";
 
 const selectedIcon = ref(iconOptions[0]);

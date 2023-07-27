@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import DInput from "@lib/components/DInput.vue";
-import DSwitch from "@lib/components/DSwitch.vue";
+import DInput from "d-components/DInput.vue";
+import DSwitch from "d-components/DSwitch.vue";
 import DStage from "@app/components/DStage.vue";
 
 const textInput = ref("");

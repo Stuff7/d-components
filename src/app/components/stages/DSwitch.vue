@@ -4,9 +4,9 @@ const flowOptions = ["column", "row", "row-reverse", "column-reverse"].map(label
 
 <script setup lang="ts">
 import { ref } from "vue";
-import DSwitch from "@lib/components/DSwitch.vue";
-import DSelect from "@lib/components/DSelect.vue";
-import DInput from "@lib/components/DInput.vue";
+import DSwitch from "d-components/DSwitch.vue";
+import DSelect from "d-components/DSelect.vue";
+import DInput from "d-components/DInput.vue";
 import DStage from "@app/components/DStage.vue";
 
 const checked = ref(false);

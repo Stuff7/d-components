@@ -5,6 +5,10 @@
   "type": "module",
   "exports": {
     ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./*": {
       "types": "./*.d.ts",
       "import": "./*.js"
     },
