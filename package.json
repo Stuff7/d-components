@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "miscfe": "github:stuff7/miscfe#release",
-    "d-components": "github:stuff7/d-components#pre-release",
+    "d-components": "github:stuff7/d-components#release",
     "vue": "^3.3.4"
   },
   "devDependencies": {
