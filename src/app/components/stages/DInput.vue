@@ -1,0 +1,38 @@
+<script setup lang="ts">
+import { ref } from "vue";
+import DInput from "@lib/components/DInput.vue";
+import DSwitch from "@lib/components/DSwitch.vue";
+import DStage from "@app/components/DStage.vue";
+
+const textInput = ref("");
+const numberInput = ref(0);
+const label = ref("This is a label");
+const disabled = ref(false);
+</script>
+
+<template>
+  <d-stage>
+    <template #text>
+      <d-input
+        v-model="textInput"
+        type="text"
+        :label="label"
+        :disabled="disabled"
+      />
+    </template>
+    <template #number>
+      <d-input
+        v-model="numberInput"
+        type="number"
+        :label="label"
+        :disabled="disabled"
+      />
+    </template>
+    <template #default-controls>
+      <p>Label</p>
+      <d-input v-model="label" />
+      <p>Disabled</p>
+      <d-switch v-model="disabled" />
+    </template>
+  </d-stage>
+</template>

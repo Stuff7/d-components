@@ -1,9 +1,9 @@
-name: Create Release Branch
+name: Create Pre-Release Branch
 
 on:
   push:
     branches:
-      - master
+      - single-project
 
 jobs:
   create_release_branch:
@@ -33,19 +33,19 @@ jobs:
 
       - name: Create Release Branch
         run: |
-          git checkout -b release
+          git checkout -b pre-release
           git rm -rf .
           mkdir tmp-lib-dist
-          rsync -av lib/dist/ tmp-lib-dist
-          rm -rf lib
+          rsync -av dist/lib/ tmp-lib-dist
+          rm -rf dist
           rsync -av tmp-lib-dist/ .
           rm -rf tmp-lib-dist
           git add .
-          git commit -m "Update release branch"
+          git commit -m "Update pre-release branch"
 
       - name: Push Release Branch
         uses: ad-m/github-push-action@v0.6.0
         with:
-          branch: release
+          branch: pre-release
           github_token: ${{ secrets.GITHUB_TOKEN }}
           force: true
