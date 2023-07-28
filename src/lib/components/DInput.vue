@@ -56,6 +56,7 @@ function validateInput(event: Event) {
       :class="$style.input"
       type="text"
       :value="inputText"
+      :inputmode="type === 'number' ? 'numeric' : 'text'"
       placeholder=" "
       v-bind="$attrs"
       @input="validateInput"

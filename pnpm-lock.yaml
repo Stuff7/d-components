@@ -7,7 +7,7 @@ settings:
 dependencies:
   d-components:
     specifier: github:stuff7/d-components#release
-    version: github.com/stuff7/d-components/e521fc3c618542356c1c9ba513193f02acfb8791(vue@3.3.4)
+    version: github.com/stuff7/d-components/d27e41b925cb715873d21ac29c4e2cb6988f0371(vue@3.3.4)
   miscfe:
     specifier: github:stuff7/miscfe#release
     version: github.com/stuff7/miscfe/9dfec095e832babcdbda9aaa76aaf515cdac6e2c
@@ -692,7 +692,7 @@ packages:
       '@vue/reactivity-transform': 3.3.4
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
-      magic-string: 0.30.1
+      magic-string: 0.30.2
       postcss: 8.4.27
       source-map-js: 1.0.2
 
@@ -749,7 +749,7 @@ packages:
       '@vue/compiler-core': 3.3.4
       '@vue/shared': 3.3.4
       estree-walker: 2.0.2
-      magic-string: 0.30.1
+      magic-string: 0.30.2
 
   /@vue/reactivity@3.3.4:
     resolution: {integrity: sha512-kLTDLwd0B1jG08NBF3R5rqULtv/f8x3rOFByTDz4J53ttIQEDmALqKqXY0J+XQeN0aV2FBxY8nJDf88yvOPAqQ==}
@@ -1384,8 +1384,8 @@ packages:
       yallist: 4.0.0
     dev: true
 
-  /magic-string@0.30.1:
-    resolution: {integrity: sha512-mbVKXPmS0z0G4XqFDCTllmDQ6coZzn94aMlb0o/A4HEHJCKcanlDZwYJgwnkmgD3jyWhUgj9VsPrfd972yPffA==}
+  /magic-string@0.30.2:
+    resolution: {integrity: sha512-lNZdu7pewtq/ZvWUp9Wpf/x7WzMTsR26TWV03BRZrXFsv+BI6dy8RAiKgm1uM/kyR0rCfUcqvOlXKG66KhIGug==}
     engines: {node: '>=12'}
     dependencies:
       '@jridgewell/sourcemap-codec': 1.4.15
@@ -1843,9 +1843,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/stuff7/d-components/e521fc3c618542356c1c9ba513193f02acfb8791(vue@3.3.4):
-    resolution: {tarball: https://codeload.github.com/stuff7/d-components/tar.gz/e521fc3c618542356c1c9ba513193f02acfb8791}
-    id: github.com/stuff7/d-components/e521fc3c618542356c1c9ba513193f02acfb8791
+  github.com/stuff7/d-components/d27e41b925cb715873d21ac29c4e2cb6988f0371(vue@3.3.4):
+    resolution: {tarball: https://codeload.github.com/stuff7/d-components/tar.gz/d27e41b925cb715873d21ac29c4e2cb6988f0371}
+    id: github.com/stuff7/d-components/d27e41b925cb715873d21ac29c4e2cb6988f0371
     name: d-components
     version: 1.1.1
     peerDependencies:
