@@ -1,0 +1,1 @@
+export default function useIntersectionObserver<E extends HTMLElement>(callback: (intersection: IntersectionObserverEntry) => unknown, options?: IntersectionObserverInit): import("vue").Ref<import("vue").UnwrapRef<E> | null>;

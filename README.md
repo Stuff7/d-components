@@ -1,3 +1,0 @@
-# DComponents
-
-Vue component library.

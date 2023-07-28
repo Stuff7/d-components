@@ -1,35 +1,23 @@
 {
   "name": "d-components",
-  "private": true,
-  "version": "0.0.0",
+  "version": "1.1.1",
+  "description": "Vue Component Library",
   "type": "module",
-  "scripts": {
-    "build": "vite build && pnpm check-lib",
-    "dev": "vite --config vite.config.app.ts",
-    "build:app": "pnpm type-check && vite build --config vite.config.app.ts",
-    "preview": "vite preview --config vite.config.app.ts",
-    "type-check": "vue-tsc --noEmit -p tsconfig.app.json",
-    "check-lib": "vue-tsc -p tsconfig.lib.json && tsc-alias -p tsconfig.lib.json",
-    "lint": "eslint --config .eslintrc.cjs --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js"
+    },
+    "./*": {
+      "types": "./*.d.ts",
+      "import": "./*.js"
+    },
+    "./*.vue": {
+      "types": "./components/*.vue.d.ts",
+      "import": "./components/*.js"
+    }
   },
-  "dependencies": {
-    "miscfe": "github:stuff7/miscfe#release",
-    "d-components": "github:stuff7/d-components#release",
+  "peerDependencies": {
     "vue": "^3.3.4"
-  },
-  "devDependencies": {
-    "@types/node": "^18.17.1",
-    "@typescript-eslint/eslint-plugin": "^6.2.0",
-    "@vitejs/plugin-vue": "^4.2.3",
-    "@vue/eslint-config-typescript": "^11.0.3",
-    "@vue/tsconfig": "^0.4.0",
-    "eslint": "^8.45.0",
-    "eslint-plugin-vue": "^9.15.1",
-    "sass": "^1.64.1",
-    "tsc-alias": "^1.8.7",
-    "typescript": "^5.1.6",
-    "vite": "^4.4.7",
-    "vue-eslint-parser": "^9.3.1",
-    "vue-tsc": "^1.8.8"
   }
 }
