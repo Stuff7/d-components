@@ -94,18 +94,15 @@ const tooltipRef = useIntersectionObserver((entry) => {
   padding: var(--dc__spacing-nm-100);
   width: max-content;
   max-width: clamp(font.rem(220), 80vw, font.rem(900));
-  transform: translate(var(--tooltip-position-x), var(--tooltip-position-y));
-
-  /* Elastic Pop-in and Pop-out Transition */
-  transform: scale(var(--scale-factor));
-  transition: transform 0.12s ease;
+  translate: var(--tooltip-position-x) var(--tooltip-position-y);
+  transition: scale 0.12s ease;
 
   &.popIn {
-    --scale-factor: 1.2;
+    scale: 1.2;
   }
 
   &.popOut {
-    --scale-factor: 0;
+    scale: 0;
   }
 }
 

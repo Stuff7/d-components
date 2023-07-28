@@ -18,7 +18,6 @@ defineProps<{ folded: boolean }>();
   display: grid;
   overflow: hidden;
   grid-template-rows: 1fr;
-  height: fit-content;
   $fold-duration: var(--dfoldable-speed, 0.25s);
   transition: grid-template-rows $fold-duration;
 

@@ -92,7 +92,6 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
 .DSelect {
   position: relative;
   width: var(--select-width, auto);
-  height: fit-content;
 
   .toggle {
     cursor: pointer;
@@ -109,6 +108,7 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
     font-size: var(--dc__p-nm-100);
     pointer-events: none;
     width: 100%;
+    height: 100%;
   }
 
   .nativeSelect {

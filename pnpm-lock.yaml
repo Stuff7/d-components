@@ -7,10 +7,10 @@ settings:
 dependencies:
   d-components:
     specifier: github:stuff7/d-components#release
-    version: github.com/stuff7/d-components/d27e41b925cb715873d21ac29c4e2cb6988f0371(vue@3.3.4)
+    version: github.com/stuff7/d-components/fb5fabcc14eeae2ec0b72644caea2b41de7e396c(vue@3.3.4)
   miscfe:
     specifier: github:stuff7/miscfe#release
-    version: github.com/stuff7/miscfe/9dfec095e832babcdbda9aaa76aaf515cdac6e2c
+    version: github.com/stuff7/miscfe/df5741cfaa94657c1fb8ae0aa24e6c46f3e091d6
   vue:
     specifier: ^3.3.4
     version: 3.3.4
@@ -1843,9 +1843,9 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  github.com/stuff7/d-components/d27e41b925cb715873d21ac29c4e2cb6988f0371(vue@3.3.4):
-    resolution: {tarball: https://codeload.github.com/stuff7/d-components/tar.gz/d27e41b925cb715873d21ac29c4e2cb6988f0371}
-    id: github.com/stuff7/d-components/d27e41b925cb715873d21ac29c4e2cb6988f0371
+  github.com/stuff7/d-components/fb5fabcc14eeae2ec0b72644caea2b41de7e396c(vue@3.3.4):
+    resolution: {tarball: https://codeload.github.com/stuff7/d-components/tar.gz/fb5fabcc14eeae2ec0b72644caea2b41de7e396c}
+    id: github.com/stuff7/d-components/fb5fabcc14eeae2ec0b72644caea2b41de7e396c
     name: d-components
     version: 1.1.1
     peerDependencies:
@@ -1854,8 +1854,8 @@ packages:
       vue: 3.3.4
     dev: false
 
-  github.com/stuff7/miscfe/9dfec095e832babcdbda9aaa76aaf515cdac6e2c:
-    resolution: {tarball: https://codeload.github.com/stuff7/miscfe/tar.gz/9dfec095e832babcdbda9aaa76aaf515cdac6e2c}
+  github.com/stuff7/miscfe/df5741cfaa94657c1fb8ae0aa24e6c46f3e091d6:
+    resolution: {tarball: https://codeload.github.com/stuff7/miscfe/tar.gz/df5741cfaa94657c1fb8ae0aa24e6c46f3e091d6}
     name: miscfe
     version: 1.0.0
     dev: false

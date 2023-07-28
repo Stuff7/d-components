@@ -81,8 +81,6 @@ function getSlots() {
   }
 
   .preview {
-    display: grid;
-    justify-content: center;
     overflow-y: auto;
   }
 

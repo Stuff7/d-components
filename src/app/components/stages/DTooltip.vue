@@ -11,13 +11,13 @@ const tooltipText = ref("This is the tooltip.");
 <template>
   <d-stage>
     <template #just-text>
-      <h1 :class="$style.Tooltip">
+      <div :class="$style.Tooltip">
         Hover over this to see the tooltip.
         <d-tooltip>{{ tooltipText }}</d-tooltip>
-      </h1>
+      </div>
     </template>
     <template #with-custom-content>
-      <h1 :class="$style.Tooltip">
+      <div :class="$style.Tooltip">
         Hover over this to see the tooltip.
         <d-tooltip>
           <span style="display: flex; gap: var(--spacing-nm-100);">
@@ -25,7 +25,7 @@ const tooltipText = ref("This is the tooltip.");
             <i>{{ tooltipText }}</i>
           </span>
         </d-tooltip>
-      </h1>
+      </div>
     </template>
     <template #default-controls>
       <p>Tooltip Text</p>
@@ -40,5 +40,7 @@ const tooltipText = ref("This is the tooltip.");
 <style module lang="scss">
 .Tooltip {
   height: fit-content;
+  background: var(--color-accent);
+  color: var(--color-background-1);
 }
 </style>

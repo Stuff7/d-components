@@ -78,7 +78,6 @@ function validateInput(event: Event) {
   display: inline-flex;
   align-items: center;
   font-size: var(--dc__p-nm-100);
-  height: fit-content;
 
   &:hover {
     .input {
@@ -120,6 +119,7 @@ function validateInput(event: Event) {
     border: 0;
     display: inline-block;
     width: 100%;
+    height: 100%;
     padding: calc(var(--dc__spacing-nm-100) * 1.5) var(--dc__spacing-nm-100);
     color: var(--dc__color-text);
     background: transparent;

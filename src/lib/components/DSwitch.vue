@@ -26,6 +26,7 @@ defineProps<{ modelValue: boolean }>();
   gap: var(--dc__spacing-nm-100);
   user-select: none;
   height: fit-content;
+  width: fit-content;
 
   .toggle {
     --width: var(--switch-width, 3rem);
