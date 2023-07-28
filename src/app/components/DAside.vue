@@ -13,7 +13,7 @@ defineEmits<{ (e: "update:modelValue", v: T): void }>();
     <button
       v-for="stageKey of stageKeys"
       :key="stageKey"
-      :class="{ [$style.Stage]: true, [$style.selected]: modelValue === stageKey }"
+      :class="{ [$style.stage]: true, [$style.selected]: modelValue === stageKey }"
       @click="$emit('update:modelValue', stageKey)"
     >
       <d-icon name="angle-double-right" />
@@ -43,7 +43,7 @@ defineEmits<{ (e: "update:modelValue", v: T): void }>();
     font-size: calc(var(--p-nm-100) * 1.4);
   }
 
-  .Stage {
+  .stage {
     font-size: var(--p-nm-100);
     border-radius: var(--radius-nm-100) 0 0 var(--radius-nm-100);
     padding: var(--spacing-nm-100);
@@ -54,6 +54,11 @@ defineEmits<{ (e: "update:modelValue", v: T): void }>();
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: var(--spacing-nm-100);
+    --focus-outline: var(--color-accent);
+
+    &:focus {
+      outline: 1px solid var(--focus-outline);
+    }
 
     &:hover {
       background: var(--color-text-2);
@@ -64,6 +69,7 @@ defineEmits<{ (e: "update:modelValue", v: T): void }>();
       pointer-events: none;
       background: var(--color-accent);
       color: var(--color-background-2);
+      --focus-outline: var(--color-text-1);
     }
   }
 }

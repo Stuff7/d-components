@@ -33,20 +33,20 @@ function getSlots() {
     v-if="selectedVariant"
     :class="$style.DStage"
   >
-    <section :class="$style.Topbar">
+    <section :class="$style.topbar">
       <p>Variant</p>
       <d-select
         v-model="selectedVariant"
         :options="variantOptions"
       />
     </section>
-    <section :class="$style.Preview">
+    <section :class="$style.preview">
       <slot :name="selectedVariant.value" />
     </section>
-    <section :class="$style.Controls">
-      <h1 :class="$style.Name">
+    <section :class="$style.controls">
+      <h1 :class="$style.name">
         Name
-      </h1><h1 :class="$style.Control">
+      </h1><h1 :class="$style.control">
         Control
       </h1>
       <slot
@@ -64,6 +64,7 @@ function getSlots() {
   grid-template-columns: 1fr;
   grid-template-rows: max-content 1fr max-content;
   height: 100%;
+  max-height: 100vh;
   background: var(--color-background-3);
   gap: 1px;
 
@@ -72,38 +73,38 @@ function getSlots() {
     background: var(--color-background-1);
   }
 
-  .Topbar {
+  .topbar {
     display: grid;
     gap: var(--spacing-nm-100);
     grid-template-columns: auto 1fr;
     align-items: center;
   }
 
-  .Preview {
-    display: flex;
+  .preview {
+    display: grid;
     justify-content: center;
-    align-items: center;
+    overflow-y: auto;
   }
 
-  .Controls {
+  .controls {
     display: grid;
     grid-template-columns: clamp(6rem, 20%, 12rem) 1fr;
     grid-template-rows: 1fr;
     align-items: center;
     row-gap: var(--spacing-nm-100);
 
-    > .Name, > .Control {
+    > .name, > .control {
       font-weight: bold;
       border-bottom: 1px solid var(--color-background-3);
       padding-block: var(--spacing-nm-100);
     }
 
-    > p, .Name {
+    > p, .name {
       grid-column: 1;
       padding-block: var(--spacing-nm-100);
     }
 
-    > :not(p), .Control {
+    > :not(p), .control {
       grid-column: 2;
     }
   }

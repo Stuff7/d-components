@@ -41,6 +41,7 @@ defineProps<{ name: keyof typeof iconMap }>();
 .DIcon {
   font-family: "Font Awesome";
   font-style: normal;
+  height: fit-content;
 
   &::after {
     content: var(--icon-unicode);

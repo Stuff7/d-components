@@ -3,6 +3,7 @@
 
 :root {
   --dc__spacing-nm-100: #{clamp(font.rem(10), 0.5vw, font.rem(12))};
+  --dc__spacing-nm-200: #{clamp(font.rem(10), 0.5vw, font.rem(12))};
 
   --dc__p-nm-100: #{clamp(font.rem(14), 1vw, font.rem(16))};
 

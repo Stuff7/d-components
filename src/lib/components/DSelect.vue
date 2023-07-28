@@ -92,6 +92,7 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
 .DSelect {
   position: relative;
   width: var(--select-width, auto);
+  height: fit-content;
 
   .toggle {
     cursor: pointer;
@@ -133,9 +134,9 @@ const getStyle = (option?: SelectOption): StyleValue | undefined => {
     }
 
     &:focus + .toggle {
-      background: var(--dc__color-accent);
-      color: var(--dc__color-background);
-      outline: 2px solid var(--dc__color-text);
+      background: var(--dc__color-background);
+      color: var(--dc__color-text);
+      outline: 1px solid var(--dc__color-accent);
     }
   }
 }

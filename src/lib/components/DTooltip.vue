@@ -46,22 +46,29 @@ const tooltipRef = useIntersectionObserver((entry) => {
 
 <template>
   <Teleport
-    v-if="isHovering"
     :to="tooltipLayerId"
   >
-    <div
-      ref="tooltipRef"
-      role="tooltip"
-      :class="$style.Tooltip"
-      :style="{
-        '--tooltip-x': `${x}px`,
-        '--tooltip-y': `${y}px`,
-        '--tooltip-position-x': `calc(${calculatedPosition.x})`,
-        '--tooltip-position-y': `calc(${calculatedPosition.y})`,
-      }"
+    <Transition
+      :enter-active-class="$style.popIn"
+      :leave-active-class="$style.popIn"
+      :enter-from-class="$style.popOut"
+      :leave-to-class="$style.popOut"
     >
-      <slot />
-    </div>
+      <div
+        v-if="isHovering"
+        ref="tooltipRef"
+        role="tooltip"
+        :class="$style.Tooltip"
+        :style="{
+          '--tooltip-x': `${x}px`,
+          '--tooltip-y': `${y}px`,
+          '--tooltip-position-x': `calc(${calculatedPosition.x})`,
+          '--tooltip-position-y': `calc(${calculatedPosition.y})`,
+        }"
+      >
+        <slot />
+      </div>
+    </Transition>
   </Teleport>
   <span
     v-if="!parentRef"
@@ -88,6 +95,18 @@ const tooltipRef = useIntersectionObserver((entry) => {
   width: max-content;
   max-width: clamp(font.rem(220), 80vw, font.rem(900));
   transform: translate(var(--tooltip-position-x), var(--tooltip-position-y));
+
+  /* Elastic Pop-in and Pop-out Transition */
+  transform: scale(var(--scale-factor));
+  transition: transform 0.12s ease;
+
+  &.popIn {
+    --scale-factor: 1.2;
+  }
+
+  &.popOut {
+    --scale-factor: 0;
+  }
 }
 
 .TooltipAnchor {

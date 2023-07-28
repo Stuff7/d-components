@@ -25,6 +25,7 @@ defineProps<{ modelValue: boolean }>();
   flex-direction: var(--switch-flex-direction, row);
   gap: var(--dc__spacing-nm-100);
   user-select: none;
+  height: fit-content;
 
   .toggle {
     --width: var(--switch-width, 3rem);
@@ -73,7 +74,7 @@ defineProps<{ modelValue: boolean }>();
 
     &:focus + .toggle {
       background: var(--dc__color-background);
-      outline-color: var(--dc__color-text);
+      outline-color: var(--dc__color-accent);
       &::after {
         background: var(--dc__color-accent);
       }

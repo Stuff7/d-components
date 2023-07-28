@@ -77,6 +77,7 @@ function validateInput(event: Event) {
   display: inline-flex;
   align-items: center;
   font-size: var(--dc__p-nm-100);
+  height: fit-content;
 
   &:hover {
     .input {

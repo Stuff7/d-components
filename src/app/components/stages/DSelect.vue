@@ -30,7 +30,6 @@ const disabled = ref(false);
     </template>
     <template #custom>
       <d-select
-        v-slot="{ focused }"
         v-model="selectedOption"
         :options="options"
         :style="{
@@ -38,7 +37,7 @@ const disabled = ref(false);
         }"
         :disabled="disabled"
       >
-        <div :class="{ [$style.CustomSelect]: true, [$style.focused]: focused }">
+        <div :class="$style.CustomSelect">
           <d-icon
             :class="$style.icon"
             name="trash"
@@ -73,10 +72,6 @@ const disabled = ref(false);
   grid-template-rows: 1fr 1fr;
   gap: var(--spacing-nm-100);
   border-block: 1px solid var(--color-background-1);
-
-  &.focused b {
-    color: var(--color-background-1);
-  }
 
   .icon {
     grid-row: span 2;
